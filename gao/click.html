@@ -1,0 +1,93 @@
+<!--
+ * @author: fengfang
+ * @file: description
+ * @Date: 2020-04-17 11:02:13
+ * @LastEditors: fengfang
+ * @LastEditTime: 2020-04-17 11:55:25
+ -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+      .pic {
+        width: 200px;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      点我显示
+      <img class="pic" src="3.jpg" alt="" />
+    </div>
+    <script>
+      var But = document.getElementsByClassName('box')[0];
+      var oDiv = document.getElementsByClassName('pic')[0];
+      But.onclick = function (e) {
+        //点击出现
+        oDiv.style.display = 'block';
+        e.stopPropagation(); //阻止冒泡
+      };
+      // 点击空白消失
+      document.onclick = function (e) {
+        oDiv.style.display = 'none';
+      };
+
+      const dataArr = [
+        {
+          name: 'uc',
+          value: 5,
+        },
+        {
+          name: 'amap',
+          value: 2,
+        },
+        {
+          name: 'ali',
+          value: 3,
+        },
+      ];
+
+      // 1.按照value从小到大排序
+      function compare(property, desc) {
+        return function (a, b) {
+          var value1 = a[property];
+          var value2 = b[property];
+          if (desc == true) {
+            // 升序排列
+            return value1 - value2;
+          } else {
+            // 降序排列
+            return value2 - value1;
+          }
+        };
+      }
+      console.log('按照value从小到大排序：');
+      console.log(dataArr.sort(compare('value', true))); //升序
+      console.log('按照value值从大到小排序：');
+      console.log(dataArr.sort(compare('value', false))); //降序
+      // 2.找出name为amap的数据
+      //1>
+      console.log('找出name为amap的数据：');
+      dataArr.forEach((item) => {
+        if (item.name == 'amap') {
+          console.log(item);
+        }
+      });
+      //2>
+      let find = dataArr.find((item) => {
+        return item.name == 'amap';
+      });
+      console.log(find);
+      // 3.把name值变成key
+      let obj = {};
+      dataArr.forEach((item) => {
+        obj[item.name] = item;
+      });
+      console.log('把name值变成key:');
+      console.log(obj);
+    </script>
+  </body>
+</html>

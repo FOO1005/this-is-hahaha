@@ -1,0 +1,215 @@
+<!--
+ * @author: fengfang
+ * @file: description
+ * @Date: 2020-05-11 18:11:48
+ * @LastEditors: fengfang
+ * @LastEditTime: 2020-05-13 11:47:32
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const arr = [
+        {
+          code: 0,
+          msg: 'OK',
+          menuId: '101103560',
+          menuParentId: '-1',
+          menuName: 'intelligence_cockpit',
+          menuTitle: '情报驾驶舱',
+          menuTitleEN: 'intelligence_cockpit',
+          menuDescription: '情报驾驶舱',
+          menuUrl: '',
+          subMenus: [
+            {
+              code: 0,
+              msg: 'OK',
+              menuId: '101103561',
+              menuParentId: '101103560',
+              menuName: 'shop_entirety',
+              menuTitle: '到店大盘',
+              menuTitleEN: 'shop_entirety',
+              menuDescription: '到店大盘',
+              menuUrl: '',
+              subMenus: [],
+              sort: '1',
+              leaf: true,
+              success: true,
+            },
+            {
+              code: 0,
+              msg: 'OK',
+              menuId: '101103562',
+              menuParentId: '101103560',
+              menuName: 'home_entirety',
+              menuTitle: '到家大盘',
+              menuTitleEN: 'home_entirety',
+              menuDescription: '到家大盘',
+              menuUrl: '',
+              subMenus: [],
+              sort: '2',
+              leaf: true,
+              success: true,
+            },
+          ],
+          sort: '1',
+          leaf: false,
+          success: true,
+        },
+        {
+          code: 0,
+          msg: 'OK',
+          menuId: '101104174',
+          menuParentId: '-1',
+          menuName: 'merchant_compliance',
+          menuTitle: '商户',
+          menuTitleEN: 'merchant_compliance',
+          menuDescription: '商户',
+          menuUrl: '',
+          subMenus: [
+            {
+              code: 0,
+              msg: 'OK',
+              menuId: '101104176',
+              menuParentId: '101104174',
+              menuName: 'license_template',
+              menuTitle: '模版',
+              menuTitleEN: 'license_template',
+              menuDescription: '模版',
+              menuUrl: '/template',
+              subMenus: [],
+              sort: '1',
+              leaf: true,
+              success: true,
+            },
+            {
+              code: 0,
+              msg: 'OK',
+              menuId: '101104177',
+              menuParentId: '101104174',
+              menuName: 'license_task',
+              menuTitle: '任务',
+              menuTitleEN: 'license_task',
+              menuDescription: '任务',
+              menuUrl: '/task',
+              subMenus: [],
+              sort: '2',
+              leaf: true,
+              success: true,
+            },
+          ],
+          sort: '2',
+          leaf: false,
+          success: true,
+        },
+        {
+          code: 0,
+          msg: 'OK',
+          menuId: '101104175',
+          menuParentId: '-1',
+          menuName: 'api_service',
+          menuTitle: '服务',
+          menuTitleEN: 'api_service',
+          menuDescription: '服务',
+          menuUrl: '',
+          subMenus: [
+            {
+              code: 0,
+              msg: 'OK',
+              menuId: '101104178',
+              menuParentId: '101104175',
+              menuName: 'license_distinguish',
+              menuTitle: '识别',
+              menuTitleEN: 'license_distinguish',
+              menuDescription: '识别',
+              menuUrl: '/tools',
+              subMenus: [],
+              sort: '1',
+              leaf: true,
+              success: true,
+            },
+            {
+              code: 0,
+              msg: 'OK',
+              menuId: '101104179',
+              menuParentId: '101104175',
+              menuName: 'address_analysis',
+              menuTitle: '解析',
+              menuTitleEN: 'address_analysis',
+              menuDescription: '解析',
+              menuUrl: '/address',
+              subMenus: [],
+              sort: '2',
+              leaf: true,
+              success: true,
+            },
+            {
+              code: 0,
+              msg: 'OK',
+              menuId: '101104180',
+              menuParentId: '101104175',
+              menuName: 'move_vegetable',
+              menuTitle: '搬菜',
+              menuTitleEN: 'move_vegetable',
+              menuDescription: '搬菜',
+              menuUrl: '/food',
+              subMenus: [],
+              sort: '3',
+              leaf: true,
+              success: true,
+            },
+            {
+              code: 0,
+              msg: 'OK',
+              menuId: '101104181',
+              menuParentId: '101104175',
+              menuName: 'move_goods',
+              menuTitle: '搬家',
+              menuTitleEN: 'move_goods',
+              menuDescription: '搬家',
+              menuUrl: '',
+              subMenus: [],
+              sort: '4',
+              leaf: true,
+              success: true,
+            },
+            {
+              code: 0,
+              msg: 'OK',
+              menuId: '101104182',
+              menuParentId: '101104175',
+              menuName: 'common_match',
+              menuTitle: '通用',
+              menuTitleEN: 'common_match',
+              menuDescription: '通用',
+              menuUrl: '',
+              subMenus: [],
+              sort: '5',
+              leaf: true,
+              success: true,
+            },
+          ],
+          sort: '3',
+          leaf: false,
+          success: true,
+        },
+      ];
+      function deepArr(arr) {
+        let newArr = [];
+        if (Array.isArray(arr)) {
+          arr.map((item) => {
+            if (Array.isArray(item)) {
+            } else {
+            }
+          });
+        }
+        return newArr;
+      }
+    </script>
+  </body>
+</html>

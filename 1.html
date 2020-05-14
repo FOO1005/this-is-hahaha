@@ -1,0 +1,125 @@
+<!--
+ * @author: fengfang
+ * @file: description
+ * @Date: 2020-04-22 19:02:38
+ * @LastEditors: fengfang
+ * @LastEditTime: 2020-05-04 15:18:43
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn">
+      点击
+    </button>
+  </body>
+  <script>
+    // let ary = [1, 2, 3, 4, 4, 5, 5];
+    // let arr = [];
+    // for (let i = 0; i <= ary.length - 1; i++) {
+    //   if (ary.indexOf(ary[i]) === ary.lastIndexOf(ary[i])) {
+    //     arr.push(ary[i]);
+    //   }
+    // }
+    // console.log(arr);
+
+    // let ary = [1, 2, 3, 3, 4, 4, 5, 5, 6, 7, 8];
+    // let arr = [];
+    // let num = 0;
+    // let number = null;
+    // for (let i = 0; i < ary.length; i++) {
+    //   let a = ary[i];
+    //   for (let j = 0; j < ary.length; j++) {
+    //     if (a === ary[j]) {
+    //       num++;
+    //     }
+    //     if (j == ary.length - 1) {
+    //       if (num == 1) {
+    //         arr.push(a);
+    //       }
+    //       num = 0;
+    //     }
+    //   }
+    // }
+    // console.log(arr);
+
+    // let names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice'];
+
+    // let nameNum = names.reduce((pre, cur) => {
+    //   if (cur in pre) {
+    //     pre[cur]++;
+    //   } else {
+    //     pre[cur] = 1;
+    //   }
+    //   return pre;
+    // }, {});
+    // console.log(nameNum); //{Alice: 2, Bob: 1, Tiff: 1, Bruce: 1}
+
+    // const a = {
+    //   b: function () {
+    //     console.log(this);
+    //     c: () => {
+    //       console.log(this);
+    //     };
+    //   },
+    // };
+    // console.log(a.b()); //b  undefined
+    // console.log(a.c()); //报错
+
+    //函数中如果return的是对象，a.user就为undefined，如果return的不是对象，a.user会指向‘追梦子’
+    // function fn() {
+    //   this.user = '追梦子';
+    //   return {};
+    // }
+    // var a = new fn();
+    // console.log(a.user); //undefined
+
+    // function demo() {
+    //   console.log(this); // this -> object
+    //   this.testStr = 'this is a test';
+    //   return {};
+    // }
+    // // 所谓构造函数，就是通过这个函数生成一个新对象，这时，this就指向这个对象。
+    // let a = new demo();
+    // console.log(a.testStr);
+
+    // var obj = {
+    //   pro: {
+    //     getPro: () => {
+    //       console.log(this);
+    //     },
+    //   },
+    // };
+    // obj.pro.getPro(); //this指向的是window，因为箭头函数定义时，getPro的上一级是pro，是一个对象，不能形成单独的作用域，故指向window。
+
+    // let btn = document.getElementById('btn');
+    // btn.onclick = function () {
+    //   window.location.href = 'http://www.baidu.com';
+    //   console.log('执行');
+    // };
+
+    // 对象之间做比较
+    // let obj = { a: 1, b: 2 };
+    // let obj1 = { a: 1, b: 2 };
+    // console.log(JSON.stringify(obj) === JSON.stringify(obj1));
+
+    // 实现一个bind
+    function fn(a, b, c) {
+      this.a = a;
+      console.log(this);
+    }
+    Function.prototype.bind = function (context, ...arg) {
+      let that = this;
+      function bound(...arg2) {
+        that.apply(context, [...arg, ...arg2]);
+      }
+      return bound;
+    };
+
+    let f = fn.bind(document, 1, 2);
+  </script>
+</html>

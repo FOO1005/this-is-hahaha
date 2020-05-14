@@ -1,0 +1,39 @@
+<!--
+ * @author: fengfang
+ * @file: description
+ * @Date: 2020-04-16 15:36:29
+ * @LastEditors: fengfang
+ * @LastEditTime: 2020-04-17 00:19:43
+ -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+      .pic {
+        width: 200px;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      点我显示
+      <img class="pic" src="3.jpg" alt="" />
+    </div>
+    <script>
+      let But = document.getElementsByClassName('box')[0];
+      let oDiv = document.getElementsByClassName('pic')[0];
+      But.onclick = function (e) {
+        //点击出现
+        oDiv.style.display = 'block';
+        e.stopPropagation(); //阻止冒泡
+      };
+      // 点击空白消失
+      document.onclick = function (e) {
+        oDiv.style.display = 'none';
+      };
+    </script>
+  </body>
+</html>

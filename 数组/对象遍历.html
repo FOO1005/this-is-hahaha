@@ -1,0 +1,60 @@
+<!--
+ * @author: fengfang
+ * @file: description
+ * @Date: 2020-04-21 22:22:56
+ * @LastEditors: fengfang
+ * @LastEditTime: 2020-04-22 11:12:44
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>数组/对象遍历</title>
+  </head>
+  <body></body>
+  <script>
+    let arr = [1, 2, 3];
+    // for (let a of arr) {
+    //   console.log(a);
+    // }
+
+    let arr1 = ['a', 'b', 'c', 'd'];
+    for (const key in arr1) {
+      // if (arr1.hasOwnProperty(key)) {
+      //   const element = arr1[key];
+      //   console.log(element);
+      // }
+      // console.log(key);
+    }
+
+    let obj = {
+      name: '123',
+      age: 12,
+      id: 1,
+    };
+    // for (const num of Array.from(obj)) {
+    //   console.log(num);
+    // }
+    for (const key in obj) {
+      // if (obj.hasOwnProperty(key)) {
+      //   const element = obj[key];
+      //   console.log(element); //读取出来的是键值
+      // }
+      console.log(key); //读取出来的是键名
+    }
+
+    function test() {
+      var name = 'test';
+      var person = {
+        name: 'hello',
+        say: function () {
+          var name = 'world';
+          console.log(this.name);
+        },
+      };
+      person.say.call(test);
+    }
+    test();
+  </script>
+</html>

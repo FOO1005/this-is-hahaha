@@ -1,0 +1,56 @@
+<!--
+ * @author: fengfang
+ * @file: description
+ * @Date: 2020-04-17 11:04:17
+ * @LastEditors: fengfang
+ * @LastEditTime: 2020-04-17 15:30:27
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const dataArr = [
+        {
+          name: 'uc',
+          value: 5,
+        },
+        {
+          name: 'amap',
+          value: 2,
+        },
+        {
+          name: 'ali',
+          value: 3,
+        },
+      ];
+      // value从小到大排序
+      const newArr = [];
+      dataArr.map((item) => {
+        newArr.push(item);
+        newArr.sort((a, b) => {
+          return a.value - b.value;
+        });
+        return newArr;
+      });
+      console.log(newArr);
+
+      //从原数组中查找name为amap的数据
+      let amap = dataArr.find((item) => {
+        return item.name === 'amap';
+      });
+      console.log(amap);
+
+      //将data数组转换成以name为key的对象
+      const obj = {};
+      dataArr.map((item) => {
+        return (obj[item.name] = item);
+      });
+      console.log(obj);
+    </script>
+  </body>
+</html>

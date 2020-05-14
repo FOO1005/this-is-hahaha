@@ -1,0 +1,153 @@
+<!--
+ * @author: fengfang
+ * @file: description
+ * @Date: 2020-04-06 13:51:33
+ * @LastEditors: fengfang
+ * @LastEditTime: 2020-04-10 16:37:41
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <style>
+      /* .box {
+        display: flex;
+      } */
+      .box1 {
+        width: 200px;
+        height: 200px;
+        /* float: left; */
+        position: absolute;
+        background: red;
+      }
+      .box2 {
+        /* flex: 1; */
+        height: 200px;
+        /* margin-left: 200px; */
+        /* float: right;
+        width: calc(100% - 200px); */
+        margin-left: 200px;
+        overflow: hidden;
+        background: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="box1">我是box1</div>
+      <div class="box2">我是box2</div>
+    </div>
+
+    <script>
+      //闭包: 函数套函数，子函数调用父函数的参数或者变量，并且子函数被外界所引用，此时父级形成了闭包环境，并且父级的参数或者变量不会被垃圾回收机制回收，当打印返回值时，在scops下有一个closure属性，此时形成了闭包环境
+      // 解决闭包：匿名函数自执行
+      //闭包的应用场景：定时器第一个函数传参
+      // function fn() {
+      //   let a = 10;
+      //   function f() {
+      //     console.log(a);
+      //   }
+      //   return f;
+      // }
+      // let newFn = fn();
+      // newFn();
+      // console.dir(newFn);
+
+      // function setTime(params) {
+      //   return function () {
+      //     console.log(params);
+      //   };
+      // }
+      // let newSetTime = setTime(1);
+      // setTimeout(newSetTime, 1000);
+
+      // let obj = {
+      //   fn: function () {
+      //     console.log(this);
+      //   },
+      // };
+      //数组去重
+      // let ary = [];
+      // let arr = [1, 2, 3, 4, 5, 2, 1];
+      // // arr = [...new Set(arr)];
+      // arr.map((item) => {
+      //   if (ary.includes(item)) return;
+      //   ary.push(item);
+      // });
+      // console.log(ary);
+      //数组排序
+
+      //方法一：sort排序
+      // let arr = [1, 2, 3, 3, 2];
+      // let newArr = arr.sort((a, b) => {
+      //   return a - b;
+      // });
+      //方法二：冒泡排序
+      // let arr = [1, 2, 3, 3, 2];
+      // for (let i = 0; i <= arr.length - 1; i++) {
+      //   for (let j = 0; j <= arr.length - 1 - i; j++) {
+      //     if (arr[j] > arr[j + 1]) {
+      //       let t = arr[j];
+      //       arr[j] = arr[j + 1];
+      //       arr[j + 1] = t;
+      //     }
+      //   }
+      // }
+      // console.log(arr);
+
+      // var arr = [1, 0, 5, 6, 3, 9, 22, 49, 20, 11, 78, 9];
+      // // 创建一个新数组
+      // for (var i = 0; i <= arr.length - 1; i++) {
+      //   // 外层循环控制比较几轮
+      //   for (var j = 0; j <= arr.length - i - 1; j++) {
+      //     // 内层循环控制每轮比较几个元素
+      //     if (arr[j] > arr[j + 1]) {
+      //       // 判断每一次比较的时候，两个数字的大小
+      //       // arr[j]是第j个元素
+      //       // arr[j+1]是第j+1 个元素
+      //       //如果j > j + 1， 把j 和j+i交换，也就是把相对大的值往后排序 也就是从小到大排序
+      //       //如果j < j + 1， 把相对小的值往后排 也就是从大到小排序
+
+      //       var temp = arr[j];
+      //       arr[j] = arr[j + 1];
+      //       arr[j + 1] = temp;
+      //       // 利用第三方变量交换j 和j + 1 的值
+      //     }
+      //   }
+      // }
+      // console.log(arr);
+
+      //方法三：快速排序   递归
+      // function quickSort(ary) {
+      //   if (ary.length <= 1) {
+      //     return ary;
+      //   }
+      //   //找到中间数所在的下标，向下取整
+      //   let midIndex = Math.floor(ary.length / 2);
+      //   // console.log(midIndex);
+      //   let mdx = ary.splice(midIndex, 1)[0];
+      //   let leftArr = [];
+      //   let rightArr = [];
+      //   for (let i = 0; i < arr.length; i++) {
+      //     ary[i] < mdx ? leftArr.push(ary[i]) : rightArr.push(ary[i]);
+      //   }
+      //   return quickSort(leftArr).concat(mdx, quickSort(rightArr));
+      // }
+      // let arr = [1, 2, 3, 4, 555, 343, 222];
+
+      // console.log(quickSort(arr));
+
+      // const对象肯定不会报错
+      // const a = {};
+      // a.v = 123;
+      // console.log(a);
+
+      // 报错
+      // const a = [];
+      // a = [1, 2, 3];
+      // console.log(a);
+      console.log(typeof null);
+    </script>
+  </body>
+</html>
